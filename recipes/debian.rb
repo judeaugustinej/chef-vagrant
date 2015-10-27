@@ -17,11 +17,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-remote_file "#{node['dst']}" do
+remote_file '#{node['dst']}' do
   source node['url']
     action :create_if_missing 
 end
 
-dpkg_package "#{node['package']}" do
-  source "#{node['dst']}"
+dpkg_package '#{node['package']}' do
+  source '#{node['dst']}'
 end
